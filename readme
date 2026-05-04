@@ -1,0 +1,103 @@
+# LinguaFlow — Translator
+
+A clean, dark-themed translation web app powered by the **MyMemory Translation API** and the browser's **Web Speech API**. No backend, no API key, no build step — just open `index.html` and go.
+
+---
+
+## Features
+
+- **100+ languages** — translate between 40+ languages including English, Arabic, Urdu, Chinese, Hindi, Japanese, and more
+- **Free translation** via the [MyMemory API](https://mymemory.translated.net/) — no key required
+- **Text-to-Speech** — listen to both the source text and the translated output using the browser's built-in Speech Synthesis
+- **Swap languages** — instantly swap source and target languages, with optional text carry-over
+- **Use as input** — send the translated result back as new source text for chained translations
+- **Copy to clipboard** — one-click copy of the translated output
+- **Match quality indicator** — shows a confidence percentage returned by the API
+- **Character limit** — supports up to 5,000 characters with a live counter and warning at 4,500
+- **Keyboard shortcut** — `Ctrl+Enter` / `Cmd+Enter` to trigger translation
+- **Responsive layout** — two-panel side-by-side view on desktop, stacked on mobile
+
+---
+
+## Getting Started
+
+No installation or dependencies required.
+
+```bash
+# Just open the file in any modern browser
+open index.html
+```
+
+Or serve it locally:
+
+```bash
+npx serve .
+# or
+python -m http.server 8080
+```
+
+Then visit `http://localhost:8080`.
+
+---
+
+## Usage
+
+1. Select a **source language** from the left dropdown (default: English)
+2. Select a **target language** from the right dropdown (default: Urdu)
+3. Type or paste text into the **Source Text** panel
+4. Click **Translate** or press `Ctrl+Enter`
+5. The translation appears in the right panel
+
+### Additional Actions
+
+| Button | Action |
+|---|---|
+| 🔊 (source) | Read source text aloud |
+| 🔊 (target) | Read translated text aloud |
+| ⇅ Swap | Swap source and target languages |
+| Copy | Copy translation to clipboard |
+| Use as input → | Move translation back to source for re-translation |
+| ✕ Clear | Clear source text and reset output |
+
+---
+
+## Tech Stack
+
+| Concern | Technology |
+|---|---|
+| Translation | [MyMemory API](https://mymemory.translated.net/) (free, no key) |
+| Text-to-Speech | Web Speech API (`SpeechSynthesisUtterance`) |
+| Fonts | Google Fonts — DM Serif Display, DM Sans |
+| Styling | Vanilla CSS with custom properties |
+| Logic | Vanilla JavaScript (ES2020+) |
+
+No frameworks, no build tools, no dependencies.
+
+---
+
+## Browser Support
+
+Works in all modern browsers. Text-to-Speech requires a browser that supports the [Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API) (Chrome, Edge, Safari, Firefox 49+). The app degrades gracefully — TTS buttons are disabled if unsupported.
+
+---
+
+## API Notes
+
+- The **MyMemory free tier** allows ~1,000 requests/day per IP
+- No API key is needed for basic usage
+- For higher limits, register at [mymemory.translated.net](https://mymemory.translated.net/) and append `&de=youremail@example.com` to the request URL in the source
+
+---
+
+## Project Structure
+
+```
+index.html      # Entire app — HTML, CSS, and JS in one file
+README.md       # This file
+```
+
+---
+
+## License
+
+MIT — free to use, modify, and distribute.
